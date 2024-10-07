@@ -8,7 +8,7 @@ __1. Study and understand the The SOLID principles.__
 
 ## Some Theory:
 
-In object-oriented design, the SOLID principles are five design principles that aim to make software designs more understandable, flexible, and maintainable. These principles address different aspects of object-oriented design and help developers create more robust and scalable systems.
+OOP or Object Oriented Programming is a coding paradigm that defines certain rules of how code must be written, to simplify writing said code and give a better reviewing/reading expeirence different types of Rules were implemented to try and make OOP better, 2 of the more well known once are GRASP and SOLID, in this lab we will be focusing on SOLID, these are 5 principles that when applied together form 'GOOD' code.
 
 The principles are:
 
@@ -17,6 +17,8 @@ The principles are:
 * L iskov Substitution Principle (LSP)
 * I nterface Segregation Principle (ISP)
 * D ependency Inversion Principle (DIP)
+
+By using these principles together, a programmer sets a strong foundation for future development, not only making his life easier, but also preparing for the future
    
 ## Main tasks:
 __1. Choose an OO programming language and a suitable IDE or Editor (No frameworks/libs/engines allowed).__
