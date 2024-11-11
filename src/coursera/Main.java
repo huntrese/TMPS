@@ -1,29 +1,41 @@
 package coursera;
 
-import coursera.builder.Website;
-import coursera.factory.Course;
-import coursera.singleton.Coursera;
+import coursera.facade.CourseraFacade;
+import coursera.flyweight.CourseType;
+import coursera.proxy.Website;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
-        Coursera coursera = Coursera.getInstance();
-        Course course = new Course();
+    public static void main(String[] args) {
+        CourseraFacade facade = new CourseraFacade();
 
-        coursera.setName("utmcurs");
-        System.out.println(String.format("Welcome to %s",coursera.getName()));
+        // Initialize the platform
+        facade.initializePlatform("UTM Coursera Platform");
 
-        course.initialize("Python");
-        System.out.println(course.getName());
-        course.initialize("Java");
-        System.out.println(course.getName());
+        System.out.println("\n=== Creating Courses ===");
 
-        Website site = new Website.WebsiteBuilder()
-                .header("website header")
-                .body("good stuff")
-                .setFooter("protected by faf licence")
-                .setLogo("faf logo")
-                .setDeveloper("huntrese")
-                .build();
-        System.out.println(site);
+        // Create Python courses
+        facade.createCourse(CourseType.PYTHON, "Introduction to Python Programming");
+        facade.createCourse(CourseType.PYTHON, "Advanced Python with Data Science");
+
+        // Create Java courses
+        facade.createCourse(CourseType.JAVA, "Java Fundamentals");
+        facade.createCourse(CourseType.JAVA, "Enterprise Java Development");
+
+        System.out.println("\n=== Creating Website ===");
+
+        // Create website with formatted content through proxy
+        Website website = facade.createWebsite(
+                "UTM Programming Courses",
+                """
+                Welcome to our programming courses platform!
+                We offer comprehensive courses in Java and Python
+                taught by industry experts.""",
+                "© 2024 UTM. All rights reserved.",
+                "utm_courses_logo",
+                "huntrese"
+        );
+
+        // Display the formatted website
+        System.out.println(website);
     }
 }

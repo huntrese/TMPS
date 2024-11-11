@@ -1,16 +1,19 @@
 package coursera.factory;
 
+import coursera.flyweight.CourseType;
+import coursera.flyweight.FlyweightCourse;
+import coursera.flyweight.FlyweightCourseFactory;
+
 public class Course {
-    public ICourse course;
-    public void initialize(String courseName) throws Exception {
-        switch (courseName.toLowerCase()){
-            case "python" -> {course= new PythonCourse().createCourse();}
-            case "java" -> {course= new JavaCourse().createCourse();}
-            default -> {throw new Exception("Unkown course, choose one from: 1. Java   2. Python");}
-        }
+    private FlyweightCourse course;
+
+    public void initialize(CourseType courseType, String courseName) {
+        course = FlyweightCourseFactory.createCourse(courseType, courseName);
+        course.createCourse();
     }
-    public String getName(){
-        if(course==null){
+
+    public String getName() {
+        if(course == null) {
             return "Please initialize a course first";
         }
         return course.getName();
