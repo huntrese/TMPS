@@ -9,12 +9,19 @@ Design patterns are typical solutions to commonly occurring problems in software
 The Structural design patterns describe different ways of assembling objects and classes into larger structures, while keeping these larger ones flexible and efficient
 
 These are the most well known structural design patterns:
+
 Adapter: Facilitates colaboraton between objects with incompatible interfaces
+
 Bridge: Separatess a large set of related classes into their abstraction and implementation, 2 subsets, which can be developed and maintained by themselves
+
 Composite: Combine many objects together in a tree structure(parents ->children) then work with these branches
+
 Decorator: Add new behavior to objects by wrapping them with new functionality
+
 Facade: Exposes to the user a single streamlined interface of a complex system, containing exactly the functionality that the user needs
+
 Flyweight: Fits more objects into RAM by sharing some resources via a common class, instead of keeping this same information as duplication in each concrete class
+
 Proxy: Provides a substitute for another object, if needed can perform operations before or after the original objects' functionality
 
 By leveraging these Structural design patterns, any developer can write more efficient code, and solve more complex problems.
