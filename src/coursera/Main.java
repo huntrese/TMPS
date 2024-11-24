@@ -14,12 +14,16 @@ public class Main {
         System.out.println("\n=== Creating Courses ===");
 
         // Create Python courses
-        facade.createCourse(CourseType.PYTHON, "Introduction to Python Programming");
-        facade.createCourse(CourseType.PYTHON, "Advanced Python with Data Science");
+        facade.createCourse(CourseType.PYTHON, "Introduction to Python Programming","project");
+        facade.createCourse(CourseType.PYTHON, "Advanced Python with Data Science","video");
 
         // Create Java courses
-        facade.createCourse(CourseType.JAVA, "Java Fundamentals");
-        facade.createCourse(CourseType.JAVA, "Enterprise Java Development");
+        facade.createCourse(CourseType.JAVA, "Java Fundamentals","video");
+        facade.createCourse(CourseType.JAVA, "Enterprise Java Development","standart");
+
+        facade.createAndManageCourse(CourseType.PYTHON, "Stateful Python with Data Science","video");
+
+        facade.createAndManageCourse(CourseType.JAVA, "Stateful Java Development","standart");
 
         System.out.println("\n=== Creating Website ===");
 
